@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             mc:Ignorable="d"
+             x:Class="Energy.PopupView">
+
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation DurationIn="400"
+                                   DurationOut="300"
+                                   EasingIn="SinOut"
+                                   EasingOut="SinIn"
+                                   HasBackgroundAnimation="True"
+                                   PositionIn="Center"
+                                   PositionOut="Center"
+                                   ScaleIn="1.2"
+                                   ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+
+
+    <StackLayout Margin="12" Padding="24" Spacing="24" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout>
+            <Label Text="Title"/>
+            <Entry Text=" " x:Name="EntTitle" FontSize="22"/>
+        </StackLayout>
+        
+        <StackLayout>
+            <Label Text="Device Type"/>
+            <Entry Text=" " x:Name="EntDevice" FontSize="22"/>
+        </StackLayout>
+
+        <StackLayout>
+            <Label Text="Rating (Watts)"/>
+            <Entry Text=" " x:Name="EntRating" FontSize="22"/>
+        </StackLayout>
+
+        <StackLayout>
+            <Label Text="Quantity "/>
+            <Entry Text=" " x:Name="EntQuantity" FontSize="22"/>
+        </StackLayout>
+
+        <StackLayout>
+            <Label Text="Operation (Hr)"/>
+            <Entry Text=" " x:Name="EntOperation"  FontSize="22"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <ActivityIndicator Color="{StaticResource NavigationPrimary}" />
+            <Button BackgroundColor="{StaticResource NavigationPrimary}" Text="ADD DEVICE" TextColor="White" FontSize="22" Clicked="BtnSave_OnClicked" />
+            <Button BackgroundColor="{StaticResource NavigationPrimary}" Text="CLOSE" TextColor="White" FontSize="22" Clicked="Handle_Clicked" />
+        </StackLayout>
+        
+
+
+
+    </StackLayout>
+</pages:PopupPage>

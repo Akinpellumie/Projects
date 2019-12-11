@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             mc:Ignorable="d"
+             x:Class="Energy.PopUpHistory">
+
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation DurationIn="400"
+                                   DurationOut="300"
+                                   EasingIn="SinOut"
+                                   EasingOut="SinIn"
+                                   HasBackgroundAnimation="True"
+                                   PositionIn="Center"
+                                   PositionOut="Center"
+                                   ScaleIn="1.2"
+                                   ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+
+    <StackLayout Margin="5,5,5,5">
+        <ListView x:Name="AuditsListView" RowHeight="100"  BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0">
+                                    <TableView Intent="Settings">
+                                        <TableRoot>
+                                            <TableSection Title="Title"  TextColor="#292929">
+                                                <ViewCell>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="{Binding title}"
+                                                TextColor="#292929" FontSize="16" HorizontalOptions="CenterAndExpand" />
+                                                    </StackLayout>
+                                                </ViewCell>
+                                            </TableSection>
+                                        </TableRoot>
+                                    </TableView>
+                                </StackLayout>
+                                <StackLayout Grid.Column="1">
+                                    <TableView Intent="Settings">
+                                        <TableRoot>
+                                            <TableSection Title="Device"  TextColor="#292929">
+                                                <ViewCell>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="{Binding device}"
+                                                TextColor="#292929" FontSize="16" HorizontalOptions="CenterAndExpand" />
+                                                    </StackLayout>
+                                                </ViewCell>
+                                            </TableSection>
+                                        </TableRoot>
+                                    </TableView>
+                                </StackLayout>
+                                <StackLayout Grid.Column="2">
+                                    <TableView Intent="Settings">
+                                        <TableRoot>
+                                            <TableSection Title="Rating"  TextColor="#292929">
+                                                <ViewCell>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="{Binding rating}"
+                                                TextColor="#292929" FontSize="16" HorizontalOptions="CenterAndExpand" />
+                                                    </StackLayout>
+                                                </ViewCell>
+                                            </TableSection>
+                                        </TableRoot>
+                                    </TableView>
+                                </StackLayout>
+                                <StackLayout Grid.Column="3">
+                                    <TableView Intent="Settings">
+                                        <TableRoot>
+                                            <TableSection Title="Quantity"  TextColor="#292929">
+                                                <ViewCell>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="{Binding quantity}"
+                                                TextColor="#292929" FontSize="16" HorizontalOptions="CenterAndExpand" />
+                                                    </StackLayout>
+                                                </ViewCell>
+                                            </TableSection>
+                                        </TableRoot>
+                                    </TableView>
+                                </StackLayout>
+                                <StackLayout Grid.Column="4">
+                                    <TableView Intent="Settings">
+                                        <TableRoot>
+                                            <TableSection Title="Operation"  TextColor="#292929">
+                                                <ViewCell>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="{Binding operation}"
+                                                TextColor="#292929" FontSize="16" HorizontalOptions="CenterAndExpand" />
+                                                    </StackLayout>
+                                                </ViewCell>
+                                            </TableSection>
+                                        </TableRoot>
+                                    </TableView>
+                                </StackLayout>
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout>
+        <Button BackgroundColor="{StaticResource NavigationPrimary}" HorizontalOptions="FillAndExpand" CornerRadius="10" Text="CLOSE" TextColor="White" FontSize="22" Clicked="Navigate" />
+        </StackLayout>
+    </StackLayout>
+    
+ 
+
+
+    <!--<ListView x:Name="AuditsListView"  Margin="12" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Title}" TextColor="Black"/>
+                        <Label Text="{Binding Device}" TextColor="Black"/>
+                        <Label Text="{Binding Rating}" TextColor="Black"/>
+                        <Label Text="{Binding Quantity}" TextColor="Black"/>
+                        <Label Text="{Binding Operation}" TextColor="Black"/>
+
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>-->
+    <!--<StackLayout Margin="5" Padding="2" Spacing="2" BackgroundColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Text="Audit History!!!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="30" FontAttributes="Bold" />
+            
+        
+    </StackLayout>-->
+    
+        
+</pages:PopupPage>

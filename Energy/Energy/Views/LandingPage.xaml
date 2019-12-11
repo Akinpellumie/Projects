@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Energy.Views.LandingPage">
+    <ContentPage.Resources>
+        <!-- Implicit styles -->
+        <ResourceDictionary>
+            <Color x:Key="Primary">#00C853</Color>
+            <Color x:Key="Accent">#FFC107</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+            <Color x:Key="TextColor">#ffffff</Color>
+            <Color x:Key="ButtonColor">#FFC107</Color>
+            <Color x:Key="BackgroundColor">#FFC107</Color>
+        </ResourceDictionary>
+
+        <OnPlatform x:Key="RegularFontFamily" x:TypeArguments="x:String">
+            <On Platform="Android">candara</On>
+            <On Platform="iOS">helveticaNeve</On>
+        </OnPlatform>
+    </ContentPage.Resources>
+
+    <StackLayout x:Name="MasterLayout">
+
+
+        <StackLayout x:Name="LogoStack" VerticalOptions="FillAndExpand">
+            <Image x:Name="LoginIcon" Source="innovation.png" HeightRequest="200" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="0,80,0,0"/>
+            <Label Text="Welcome to Pelz Energy Audit!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="22" />
+        </StackLayout>
+
+        <StackLayout>
+            <Button Clicked="LoadAudit" Margin="0,0,0,50" Text="CLICK TO AUDIT" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="10" FontAttributes="Bold" BackgroundColor="{StaticResource Accent}" TextColor="{StaticResource TextColor}" FontSize="22" FontFamily="san-serif"></Button>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
